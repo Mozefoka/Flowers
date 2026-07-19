@@ -1,0 +1,443 @@
+.home {
+
+  &__media {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2vw, 20px);
+    margin-bottom: clamp(30px, 3vw, 40px);
+  }
+
+  &__media-video {
+    max-width: 860px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  &__media-images {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vw, 20px);
+
+    img {
+      max-width: 420px;
+      width: 100%;
+    }
+  }
+
+  &__filter-tab-container {
+    margin-bottom: clamp(30px, 3vw, 40px);
+
+    @media (max-width: 992px) {
+      @include flex($gap: 25px);
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+        background: transparent;
+      }
+    }
+  }
+
+  &__filter-tab-mobile {
+    display: none;
+
+    @media (max-width: 992px) {
+      display: flex;
+      gap: 5px;
+    }
+  }
+
+  &__filter-tab-group {
+    @include flex($gap: 10px);
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    &--active {
+      display: flex !important;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  &__filter-tab {
+    @include button-white(10px);
+
+    @media (max-width: 992px) {
+      white-space: nowrap;
+      border-radius: 5px;
+    }
+
+    &--active {
+      @include button-green(10px);
+
+      @media (max-width: 992px) {
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__catalog {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 40px;
+
+    &--active {
+      grid-auto-flow: column;
+      gap: 70px;
+    }
+  }
+
+  &__catalog-filter-form {
+    width: 120px;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+  }
+
+  &__catalog-filter {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: 5px;
+      width: 10px;
+      height: 10px;
+      background: url("#{$icons}arrow.svg") no-repeat;
+    }
+
+    &[open] {
+
+      &::after {
+        top: 8px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__catalog-filter-title {
+    font-size: 24px;
+    font-weight: 500;
+    opacity: .5;
+    list-style: none;
+    margin-bottom: 15px;
+  }
+
+  &__catalog-filter-checkbox {
+    @include flex($gap: 10px);
+    width: fit-content;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  &__catalog-products-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    visibility: visible;
+
+    @media (max-width: 992px) {
+      display: none;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__catalog-products-inner {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 305px));
+    gap: clamp(30px, 5vw, 60px) clamp(20px, 2vw, 25px);
+    margin-bottom: clamp(45px, 5vw, 60px);
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(3, minmax(0, 305px));
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 305px));
+      justify-content: center;
+    }
+
+    &--active {
+      grid-template-columns: repeat(3, minmax(0, 305px));
+      justify-content: space-between;
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__catalog-show-all {
+    @include button-white();
+    margin-inline: auto;
+    margin-bottom: clamp(60px, 10vw, 90px);
+  }
+
+  &__advantages {
+    margin-bottom: clamp(60px, 10vw, 120px);
+  }
+
+  &__advantages-title {
+    font-size: clamp(20px, 3vw, 48px);
+    margin-bottom: clamp(30px, 3vw, 40px);
+
+    @media (max-width: 992px) {
+      font-weight: 500;
+    }
+  }
+
+  &__advantages-content {
+    @include flex(space-between, 15px);
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__advantages-content-item {
+    position: relative;
+    max-width: 245px;
+    width: 100%;
+    padding: 20px 0;
+    border-radius: 20px;
+    background-color: $white;
+    text-align: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 14px;
+      right: 5px;
+      width: 95px;
+      height: 95px;
+      background: url("#{$icons}advanteges-flowers-bg.svg") no-repeat;
+      opacity: .1;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+      text-align: start;
+
+      &::after {
+        top: 5px;
+      }
+    }
+  }
+
+  &__advantages-content-item-inner {
+    @include flex($gap: 0);
+    flex-direction: column;
+
+    @media (max-width: 992px) {
+      align-items: flex-start;
+      padding: 20px;
+    }
+  }
+
+  &__advantages-content-item-title {
+    max-width: 145px;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  &__advantages-content-item-description {
+    max-width: 145px;
+    opacity: .5;
+    line-height: 130%;
+
+    @media (max-width: 992px) {
+      max-width: 100%;
+    }
+  }
+
+  //Блок о нас
+
+  &__about-us {
+    margin: clamp(60px, 10vw, 120px) 0;
+  }
+
+  &__about-us-title {
+    font-size: clamp(20px, 5vw, 48px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    @media (max-width: 992px) {
+      font-weight: 500;
+    }
+  }
+
+  &__about-us-description {
+    @include flex($gap: 20px);
+    align-items: normal;
+    margin-bottom: clamp(20px, 3vw, 30px);
+
+    p {
+      max-width: 640px;
+      width: 100%;
+      font-size: clamp(16px, 3vw, 18px);
+      line-height: 120%;
+      opacity: .5;
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+
+      p {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__about-us-btn {
+    @include button-under-line($green);
+  }
+
+  //Отзывы
+
+  &__reviews-swiper-wrapper {
+    height: auto !important;
+  }
+
+  &__reviews-swiper {
+    position: relative;
+  }
+
+  &__reviews-swiper-button-next,
+  &__reviews-swiper-button-prev {
+    top: -25px !important;
+    color: $dark !important;
+    opacity: .5;
+
+    &:after {
+      font-size: 15px !important;
+    }
+
+    @media (max-width: 992px) {
+      display: none !important;
+    }
+  }
+
+  &__reviews-swiper-button-next {
+    right: 25px !important;
+  }
+
+  &__reviews-swiper-button-prev {
+    left: 94% !important;
+    transform: translate(-50%, 0);
+  }
+
+  &__reviews-title {
+    font-size: clamp(20px, 3vw, 48px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__reviews-description {
+    max-width: 860px;
+    font-size: clamp(16px, 3vw, 18px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+    opacity: .5;
+  }
+
+  &__reviews-swiper-slide {
+    max-width: 400px;
+    flex-shrink: 0;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: $white;
+  }
+
+  &__reviews-swiper-slide-inner {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px;
+
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+
+  &__reviews-swiper-slide-user-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__reviews-swiper-slide-user-review {
+    font-size: 18px;
+    line-height: 120%;
+    opacity: .5;
+  }
+}
+
+.place-cart {
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flex(center);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__modal-content {
+    position: relative;
+    max-width: 620px;
+    width: 100%;
+    @include flex(center);
+    flex-direction: column;
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: 20px;
+    background-color: $white;
+
+    img {
+      margin-bottom: clamp(20px, 2.5vw, 35px);
+    }
+  }
+
+  &__modal-title {
+    font-size: clamp(22px, 2vw, 32px);
+    margin-bottom: clamp(20px, 2.5vw, 35px);
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    font-size: 30px;
+    opacity: .5;
+  }
+
+  &__modal-card-link {
+    @include button-green(15px 10px, 100%);
+  }
+}

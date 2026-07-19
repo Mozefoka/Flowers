@@ -1,0 +1,47 @@
+@mixin flex($position: normal, $gap: 0) {
+  display: flex;
+  justify-content: $position;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin button-green($padding: 15px 30px, $max-width: fit-content) {
+  display: block;
+  max-width: $max-width;
+  width: 100%;
+  padding: $padding;
+  background-color: $green;
+  color: $white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+@mixin button-white($padding: 15px 30px, $max-width: fit-content) {
+  display: block;
+  max-width: $max-width;
+  width: 100%;
+  padding: $padding;
+  border-radius: 15px;
+  border: 1px solid $green;
+  text-align: center;
+  transition: all .3s;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+}
+
+@mixin button-under-line($color) {
+  display: inline-block;
+  font-size: 18px;
+  border-bottom: 1px dashed $color;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  transition: border-color .3s, border-width .3s;
+
+  &:hover {
+    border-color: transparent;
+    border-width: 0;
+  }
+}

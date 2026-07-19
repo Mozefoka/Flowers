@@ -1,0 +1,478 @@
+.product {
+
+  &__layout {
+    display: flex;
+    gap: 20px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+
+  &__layout-title {
+    font-size: clamp(22px, 3vw, 32px);
+    margin-bottom: 20px;
+  }
+
+  &__layout-gallery {
+    max-width: 640px;
+
+    @media (max-width: 992px) {
+      max-width: 930px;
+    }
+  }
+
+  &__swiper {
+    margin-bottom: clamp(10px, 3vw, 20px);
+
+    img {
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 930px;
+
+      img {
+        width: 100%;
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 555px) {
+
+      img {
+        height: 270px;
+      }
+    }
+  }
+
+  &__swiper-wrapper {
+    height: auto !important;
+  }
+
+  &__swiper-line {
+    margin-bottom: clamp(30px, 3vw, 40px);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .swiper-slide {
+      width: 90px !important;
+      height: 96px !important;
+
+      @media (max-width: 555px) {
+        width: 50px !important;
+        height: 50px !important;
+      }
+    }
+  }
+
+  &__layout-info {
+    margin-top: 50px;
+    flex-grow: 1;
+
+    @media (max-width: 992px) {
+      margin: 0;
+    };
+  }
+
+  &__layout-text {
+    font-size: 18px;
+    opacity: .5;
+  }
+
+  &__layout-info-size {
+    @include flex($gap: 10px);
+    margin-top: 10px;
+    margin-bottom: 30px;
+
+    @media (max-width: 992px) {
+      margin-top: 25px;
+    }
+  }
+
+  &__layout-info-size-btn {
+    position: relative;
+    padding: 7px 10px;
+    border-radius: 10px;
+    border: 1px solid $green;
+
+    @media (max-width: 992px) {
+      max-width: 200px;
+      width: 100%;
+    }
+
+    &--discount {
+      padding: 7px 10px 7px 25px;
+
+      @media (max-width: 1020px) {
+        padding: 7px 5px 7px 20px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 7px;
+        width: 13px;
+        height: 13px;
+        background-image: url("#{$icons}discount-pink.svg");
+
+        @media (max-width: 1020px) {
+          left: 4px;
+        }
+
+        @media (max-width: 992px) {
+          left: 25%;
+        }
+
+        @media (max-width: 555px) {
+          left: 20%;
+        }
+
+        @media (max-width: 465px) {
+          left: 15%;
+        }
+      }
+    }
+
+    &--active {
+      color: $white;
+      background-color: $green;
+    }
+
+    &--active.product__layout-info-size-btn--discount {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 9px;
+        left: 7px;
+        width: 13px;
+        height: 13px;
+        background-image: url("#{$icons}discount-white.svg");
+
+        @media (max-width: 1020px) {
+          left: 4px;
+        }
+
+        @media (max-width: 992px) {
+          left: 25%;
+        }
+
+        @media (max-width: 555px) {
+          left: 20%;
+        }
+
+        @media (max-width: 465px) {
+          left: 15%;
+        }
+      }
+    }
+  }
+
+  &__layout-info-price {
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__layout-info-price-flex {
+    @include flex($gap: 15px);
+    font-size: clamp(24px, 3vw, 32px);
+    margin-bottom: 20px;
+  }
+
+  &__layout-info-price-sum-discount {
+    font-size: clamp(16px, 3vw, 18px);
+    opacity: .5;
+    text-decoration: line-through;
+  }
+
+  &__layout-info-price-discount {
+    width: 190px;
+    font-size: 14px;
+    color: $pink;
+    opacity: .5;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+  }
+
+  &__layout-info-purchase {
+    @include flex($gap: 10px);
+    margin-bottom: 10px;
+
+    @media (max-width: 992px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__layout-info-purchase-order-btn {
+    @include button-green(15px 0 15px 15px, 150px);
+    position: relative;
+
+    @media (max-width: 1090px) {
+      max-width: 122px;
+      font-size: 15px;
+    };
+
+    @media (max-width: 1090px) {
+      max-width: 100px;
+    };
+
+    @media (max-width: 992px) {
+      max-width: 200px;
+      width: 100%;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: 22%;
+      width: 12px;
+      height: 12px;
+      background-image: url("#{$icons}cart-white.svg");
+
+      @media (max-width: 1090px) {
+        top: 16.3px;
+        left: 20px;
+      }
+
+      @media (max-width: 1020px) {
+        top: 16.5px;
+        left: 12px;
+      }
+
+      @media (max-width: 992px) {
+        left: 55px;
+      }
+
+      @media (max-width: 465px) {
+        left: 27%;
+      }
+    }
+  }
+
+  &__layout-info-purchase-buy-btn {
+    @include button-white();
+
+    @media (max-width: 1090px) {
+      padding: 15px 8px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 1090px) {
+      padding: 15px 5px;
+    }
+
+    @media (max-width: 992px) {
+      max-width: 200px;
+      width: 100%;
+    }
+  }
+
+  &__layout-info-purchase-fav-btn {
+    @include flex(center);
+    min-width: 45px;
+    height: 45px;
+    background-color: $pink;
+    border-radius: 10px;
+
+    img {
+      width: 30px;
+    }
+  }
+
+  &__layout-info-composition {
+    margin-top: 30px;
+
+    @media (max-width: 992px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__layout-info-composition-flower {
+    opacity: .5;
+    margin-bottom: 5px;
+  }
+
+  &__layout-info-composition-flower-btn {
+    text-decoration: underline;
+  }
+
+  &__layout-info-flower-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    @include flex(center);
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__layout-info-flower-modal-content {
+    position: relative;
+    max-width: 410px;
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: 20px;
+    background-color: $white;
+    text-align: center;
+    z-index: 10;
+  }
+
+  &__layout-info-flower-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    font-size: 30px;
+    opacity: .5;
+  }
+
+  &__layout-info-flower-modal-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  &__layout-info-flower-modal-description {
+    @include flex(space-between, 10px);
+    margin-bottom: clamp(40px, 5vw, 60px);
+  }
+
+  &__layout-info-flower-modal-description-item {
+    font-size: 18px;
+
+    p:first-child {
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+  }
+
+  &__layout-info-flower-modal-img {
+    @include flex(center);
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__layout-info-composition-title {
+    font-size: clamp(20px, 2vw, 24px);
+    margin-bottom: 10px;
+  }
+
+  &__layout-info-composition-safety {
+    position: relative;
+    width: 190px;
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: .5;
+
+    @media (max-width: 992px) {
+      width: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 17px;
+      left: 60px;
+      width: 10px;
+      height: 10px;
+      background-image: url("#{$icons}paw.svg");
+
+      @media (max-width: 992px) {
+        top: 5px;
+        left: 220px;
+      }
+    }
+  }
+
+  &__layout-grooming {
+    margin-bottom: 60px;
+
+    @media (max-width: 992px) {
+      max-width: 370px;
+      width: 100%;
+    }
+
+    a {
+      display: inline;
+      text-decoration: underline;
+    }
+  }
+
+  &__layout-grooming-title {
+    font-size: clamp(20px, 2vw, 24px);
+    margin-bottom: clamp(10px, 2vw, 20px);
+  }
+}
+
+.place-cart {
+
+  &__modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include flex(center);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+
+    &--active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__modal-content {
+    position: relative;
+    max-width: 620px;
+    width: 100%;
+    @include flex(center);
+    flex-direction: column;
+    padding: clamp(20px, 3vw, 40px);
+    border-radius: 20px;
+    background-color: $white;
+
+    img {
+      margin-bottom: clamp(20px, 2.5vw, 35px);
+    }
+  }
+
+  &__modal-title {
+    font-size: clamp(22px, 2vw, 32px);
+    margin-bottom: clamp(20px, 2.5vw, 35px);
+  }
+
+  &__modal-close {
+    position: absolute;
+    top: 15px;
+    right: 40px;
+    font-size: 30px;
+    opacity: .5;
+  }
+
+  &__modal-card-link {
+    @include button-green(15px 10px, 100%);
+  }
+}

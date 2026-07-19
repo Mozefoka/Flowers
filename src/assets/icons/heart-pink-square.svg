@@ -1,0 +1,23 @@
+<svg width="44.000000" height="44.000000" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<filter id="filter_12_737_dd" x="0.000000" y="0.000000" width="44.000000" height="44.000000" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+			<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+			<feGaussianBlur in="BackgroundImage" stdDeviation="2"/>
+			<feComposite in2="SourceAlpha" operator="in" result="effect_backgroundBlur_1"/>
+			<feBlend mode="normal" in="SourceGraphic" in2="effect_backgroundBlur_1" result="shape"/>
+		</filter>
+		<clipPath id="clip12_739">
+			<rect id="Icon / Heart" rx="0.000000" width="29.171429" height="29.171429" transform="translate(6.785645 6.500000)" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<g filter="url(#filter_12_737_dd)">
+		<rect id="Bg" rx="10.000000" width="44.000000" height="44.000000" fill="#F46D93" fill-opacity="1.000000"/>
+	</g>
+	<rect id="Icon / Heart" rx="0.000000" width="29.171429" height="29.171429" transform="translate(6.785645 6.500000)" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip12_739)">
+		<path id="Vector" d="M21.49 29.31L21.37 29.44L21.23 29.31C15.26 23.9 11.31 20.31 11.31 16.68C11.31 14.17 13.2 12.28 15.71 12.28C17.65 12.28 19.53 13.54 20.2 15.25L22.54 15.25C23.2 13.54 25.09 12.28 27.02 12.28C29.54 12.28 31.42 14.17 31.42 16.68C31.42 20.31 27.48 23.9 21.49 29.31ZM27.02 9.77C24.84 9.77 22.74 10.78 21.37 12.38C20 10.78 17.9 9.77 15.71 9.77C11.84 9.77 8.8 12.8 8.8 16.68C8.8 21.42 13.07 25.3 19.54 31.18L21.37 32.83L23.19 31.18C29.66 25.3 33.94 21.42 33.94 16.68C33.94 12.8 30.9 9.77 27.02 9.77Z" fill="#FEFEFE" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>

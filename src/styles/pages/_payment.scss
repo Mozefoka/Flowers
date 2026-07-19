@@ -1,0 +1,28 @@
+.payment {
+
+  &__title {
+    font-size: clamp(22px, 3vw, 48px);
+    margin-bottom: clamp(20px, 2vw, 30px)
+  }
+
+  &__info-flex-group {
+    @include flex(space-between, 55px);
+    margin-bottom: clamp(20px, 2.5vw, 40px);
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  &__info-item-title {
+    font-size: clamp(20px, 2vw, 24px);
+    margin-bottom: clamp(10px, 1.25vw, 20px)
+  }
+
+  &__info-item-description {
+    font-size: clamp(16px, 1.11vw, 18px);
+    line-height: 120%;
+    opacity: .5;
+  }
+}

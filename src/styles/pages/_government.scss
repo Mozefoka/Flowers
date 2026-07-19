@@ -1,0 +1,102 @@
+.government {
+
+  &__info {
+    margin-bottom: clamp(30px, 3vw, 60px);
+  }
+
+  &__title {
+    font-size: clamp(22px, 3vw, 48px);
+    line-height: 110%;
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__subtitle {
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 120%;
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__advantages {
+    margin-bottom: clamp(30px, 3vw, 80px);
+  }
+
+  &__advantages-title {
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__advantages--inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 30px;
+
+    @media (max-width: 992px) {
+      display: block;
+    }
+
+    :nth-child(5) {
+      grid-column: span 1;
+      grid-row: 2;
+    }
+
+    :nth-child(6) {
+      grid-row: 2;
+      grid-column: span 2;
+    }
+
+    :last-child {
+      grid-column: span 1;
+      grid-row: 2;
+    }
+  }
+
+  &__advantages-item {
+    height: 120px;
+    padding-inline: 10px;
+    align-content: center;
+    text-align: center;
+    font-size: 18px;
+    line-height: 120%;
+    border-radius: 20px;
+    background-color: $white;
+
+    @media (max-width: 992px) {
+      height: clamp(85px, 3vw, 100px);
+      margin-bottom: 10px;
+
+      p {
+        opacity: .5;
+      }
+    }
+  }
+
+  &__suggestions-info {
+    margin-bottom: clamp(20px, 3vw, 30px);
+  }
+
+  &__suggestions-title {
+    font-size: clamp(20px, 3vw, 32px);
+    margin-bottom: clamp(10px, 3vw, 20px);
+  }
+
+  &__suggestions-info-title {
+    font-size: clamp(16px, 3vw, 20px);
+    margin-bottom: clamp(10px, 3vw, 20px);
+  }
+
+  &__suggestions-description {
+    max-width: 800px;
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 120%;
+    opacity: .5;
+  }
+
+  &__suggestions-group {
+    @include flex(space-between, 100px);
+    align-items: normal;
+
+    @media (max-width: 992px) {
+      display: block;
+    }
+  }
+}
