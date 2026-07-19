@@ -1,1 +1,0 @@
-import"./main.PhB0bLIf.js";document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".cart__products-card-delete").forEach(t=>{t.addEventListener("click",function(n){const e=t.getAttribute("data-item-id");fetch("/cart/item/"+e).then(c=>{location.reload(!0)})})})});
